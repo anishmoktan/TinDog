@@ -164,17 +164,18 @@ p {
     background-color: #ff4c68;
     text-align: center;
     color: white;
+    padding: 7% 15%;
 
 }
 
 .top{
-    padding:50px 0 0;
+    /* padding:50px 0 0; */
     font-weight: bolder;
 }
 
 #footer{
+    padding: 7% 15%;
     text-align: center;
-    margin: 100px;
 
 }
 .logo{
