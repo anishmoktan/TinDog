@@ -25,6 +25,18 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
+      # Configuring AWS
+
+      - name: Configure AWS credentials from Test account
+      uses: aws-actions/configure-aws-credentials@v1
+      with:
+        aws-access-key-id: ${{ secrets.TEST_AWS_ACCESS_KEY_ID }}
+        aws-secret-access-key: ${{ secrets.TEST_AWS_SECRET_ACCESS_KEY }}
+        aws-region: ${{ secrets.us-east-1 }} 
+
+      # Runs a single command using the runners shell
+      - name: Prints AWS S3 Buckets
+        run: aws s3 ls
 
       # Runs a single command using the runners shell
       - name: Prints the current directory
