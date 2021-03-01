@@ -53,9 +53,7 @@ jobs:
           echo Add other actions to build,
           echo test, and deploy your project.
 
-      - name: Copy files to the production website with the AWS CLI
-        run: |
-          aws s3 sync . s3://www
+      # Deployment to S3
 
       - name: Deploy app to S3 bucket
         run: aws s3 sync ./build/ s3://www.tindog.net
